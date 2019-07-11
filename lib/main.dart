@@ -33,8 +33,22 @@ class _HomePageState extends State<HomePage> {
           title: Text(widget.title),
         ),
         body: Column(
-          children: <Widget>[_titleSection(), _buttonSection(), _textSection()],
+          children: <Widget>[
+            _imageSection(),
+            _titleSection(),
+            _buttonSection(),
+            _textSection()
+          ],
         ));
+  }
+
+  Widget _imageSection() {
+    return Image.asset(
+      "images/lake.jpg",
+      width: 600,
+      height: 240,
+      fit: BoxFit.cover,
+    );
   }
 
   Widget _titleSection() {
