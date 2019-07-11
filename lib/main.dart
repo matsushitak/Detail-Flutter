@@ -11,16 +11,12 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(title: 'Detail'),
+      home: HomePage(),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -29,17 +25,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
         body: ListView(
-          children: <Widget>[
-            _imageSection(),
-            _titleSection(),
-            _buttonSection(),
-            _textSection()
-          ],
-        ));
+      children: <Widget>[
+        _imageSection(),
+        _titleSection(),
+        _buttonSection(),
+        _textSection()
+      ],
+    ));
   }
 
   Widget _imageSection() {
