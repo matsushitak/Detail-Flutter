@@ -26,34 +26,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Widget titleSection = Container(
-    padding: const EdgeInsets.all(32),
-    child: Row(
-      children: <Widget>[
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Text(
-                  "Oeschinen Lake Campground",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ),
-              Text(
-                "Kandersted Switzerland",
-                style: TextStyle(color: Colors.grey[500]),
-              )
-            ],
-          ),
-        ),
-        Icon(Icons.star, color: Colors.red[500]),
-        Text("41")
-      ],
-    ),
-  );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +33,37 @@ class _HomePageState extends State<HomePage> {
           title: Text(widget.title),
         ),
         body: Column(
-          children: <Widget>[titleSection],
+          children: <Widget>[titleSection()],
         ));
+  }
+
+  Widget titleSection() {
+    return Container(
+      padding: const EdgeInsets.all(32),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Text(
+                    "Oeschinen Lake Campground",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Text(
+                  "Kandersted Switzerland",
+                  style: TextStyle(color: Colors.grey[500]),
+                )
+              ],
+            ),
+          ),
+          Icon(Icons.star, color: Colors.red[500]),
+          Text("41")
+        ],
+      ),
+    );
   }
 }
