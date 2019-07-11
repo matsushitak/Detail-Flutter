@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: Column(
+        body: ListView(
           children: <Widget>[
             _imageSection(),
             _titleSection(),
