@@ -33,11 +33,11 @@ class _HomePageState extends State<HomePage> {
           title: Text(widget.title),
         ),
         body: Column(
-          children: <Widget>[titleSection()],
+          children: <Widget>[_titleSection(), _buttonSection()],
         ));
   }
 
-  Widget titleSection() {
+  Widget _titleSection() {
     return Container(
       padding: const EdgeInsets.all(32),
       child: Row(
@@ -64,6 +64,36 @@ class _HomePageState extends State<HomePage> {
           Text("41")
         ],
       ),
+    );
+  }
+
+  Widget _buttonSection() {
+    final color = Theme.of(context).primaryColor;
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        _buildButtonColumn(color, Icons.call, "CALL"),
+        _buildButtonColumn(color, Icons.near_me, "ROUTE"),
+        _buildButtonColumn(color, Icons.share, "SHARE"),
+      ],
+    );
+  }
+
+  Widget _buildButtonColumn(Color color, IconData icon, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(icon, color: color),
+        Container(
+          margin: const EdgeInsets.only(top: 8),
+          child: Text(
+            label,
+            style: TextStyle(
+                fontSize: 12, fontWeight: FontWeight.w400, color: color),
+          ),
+        )
+      ],
     );
   }
 }
